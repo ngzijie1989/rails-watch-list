@@ -1,0 +1,39 @@
+<h1 class="fw-bold fs-1 my-5"><%= @list.name %></h1>
+
+<div class="navbar">
+  <h2>Movies</h2>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AddMovie">Add Movie</button>
+</div>
+
+<div class="row bg-light">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="col-3">
+      <div class="card p-2 m-3 text-center">
+        <div class="p-3 fw-bold"><%= bookmark.movie.title %></div>
+        <div><img class="movieimg mb-3" src=<%=bookmark.movie.poster_url %> alt= <%= bookmark.movie.title %>></div>
+        <div class="p-3"><%= bookmark.comment %></div>
+         <%= link_to "Delete", list_bookmark_path(@list, bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-warning"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%# <%= link_to "Add movie", new_list_bookmark_path(@list) %> 
+
+<div class="modal fade" id="AddMovie" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add movie</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@list , @bookmark] do |f| %>
+          <%= f.input :comment %>
+          <%= f.association :movie %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

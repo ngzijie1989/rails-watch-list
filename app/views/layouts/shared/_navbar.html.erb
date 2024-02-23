@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-success-subtle p-3">
+  
+  <div class="container-fluid fs-5">
+      <div class="left-nav">
+        <i class="fa-brands fa-facebook"></i>
+      </div>
+
+      <div class="right-nav d-flex align-items-center">
+        <%= link_to "Return to main", lists_path, class:"btn btn-primary me-3"%>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AddList">Add List</button></p>
+      </div>
+    </div>
+</nav>  
+
+<!-- Modal -->
+<div class="modal fade" id="AddList" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add List</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <%= simple_form_for List.new do |f| %>
+            <%= f.input :name %>
+            <%= f.submit %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

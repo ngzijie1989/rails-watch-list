@@ -1,0 +1,8 @@
+<h1>My List</h1>
+
+<% @lists.each do |genre|%>
+<div>
+  <%= link_to genre.name, list_path(genre) %>
+</div>
+<% end %>
+
