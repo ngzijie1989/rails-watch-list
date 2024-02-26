@@ -6,14 +6,16 @@
   <div class="row">
   <% @lists.each do |list|%>
     <div class="col-3">
-      <div class="m-3 d-flex justify-content-between border p-2">
-        <div><%= link_to list.name, list_path(list), style: "text-decoration: none; color: black; font-size: 1.5rem; font-weight: bold"%></div>
-        <div><%= link_to "X", list_path(list), style: "text-decoration: none; color: black; font-size: 1.5rem", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
-      </div>
-      <div>
-      <% if list.image_list.attached?%>
-        <%= cl_image_tag list.image_list.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
+      <div class="card p-3 mb-3">
+        <div class="m-3 d-flex justify-content-between p-2">
+          <div><%= link_to list.name, list_path(list), style: "text-decoration: none; color: black; font-size: 1.5rem; font-weight: bold"%></div>
+          <div><%= link_to "X", list_path(list), style: "text-decoration: none; color: black; font-size: 1.5rem", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
+        </div>
+        <div>
+          <% if list.image_list.attached?%>
+          <%= cl_image_tag list.image_list.key, class:"image_list" %>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
