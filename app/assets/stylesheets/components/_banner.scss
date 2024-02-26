@@ -1,7 +1,42 @@
 .banner{
-  background-image: asset-url("cinema-movie-showtime-with-film-strip-background_1017-33455.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 55vh;;
   margin-top: 20px;
+  width: 100%;
+  background-size: cover;
+  height: 40rem;
+}
+
+.tagline{
+  top: 90px;
+  right: 100px;
+  position: absolute;
+  font-weight: bold;
+  width: 30%;
+  font-size: 4rem;
+  color: white;
+  text-align: right;
+}
+
+.image-position{
+  position: relative;
+}
+
+.show-banner{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: contain;
+  margin-top: 10px;
+}
+
+.show-bannerp{
+  position: relative;
+}
+
+.showtag{
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  background-color: blue;
+  padding: 3rem;
+  color:white;
+  border-radius: 10%;
 }

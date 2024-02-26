@@ -1,4 +1,9 @@
-<div class="banner"></div>
+<div>
+  <div class="image-position">
+    <%= image_tag "cinema-movie-showtime-with-film-strip-background_1017-33455.jpg", alt: "Le Wagon", width: 200, class:"banner" %>
+    <h3 class="tagline"> "Chope your seat, grab some popcorn, movie time - confirm shiok!"</h3>
+  </div>
+</div>
 
 <div class="container">
   <h1 class="fw-bold fs-1 my-5">My List</h1>
@@ -6,7 +11,7 @@
   <div class="row">
   <% @lists.each do |list|%>
     <div class="col-3">
-      <div class="card p-3 mb-3">
+      <div class="card p-3 mb-5">
         <div class="m-3 d-flex justify-content-between p-2">
           <div><%= link_to list.name, list_path(list), style: "text-decoration: none; color: black; font-size: 1.5rem; font-weight: bold"%></div>
           <div><%= link_to "X", list_path(list), style: "text-decoration: none; color: black; font-size: 1.5rem", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
