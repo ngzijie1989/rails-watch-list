@@ -74,3 +74,4 @@ gem "simple_form"
 gem "sassc-rails"
 gem "faker"
 gem 'bullet', group: 'development'
+gem "cloudinary"

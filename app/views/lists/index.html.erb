@@ -10,6 +10,11 @@
         <div><%= link_to list.name, list_path(list), style: "text-decoration: none; color: black; font-size: 1.5rem; font-weight: bold"%></div>
         <div><%= link_to "X", list_path(list), style: "text-decoration: none; color: black; font-size: 1.5rem", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
       </div>
+      <div>
+      <% if list.image_list.attached?%>
+        <%= cl_image_tag list.image_list.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      </div>
     </div>
   <% end %>
   </div>

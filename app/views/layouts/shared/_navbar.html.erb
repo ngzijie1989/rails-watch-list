@@ -24,7 +24,7 @@
       <div class="modal-body">
           <%= simple_form_for List.new do |f| %>
             <%= f.input :name %>
-            <%= f.input :url %>
+             <%= f.input :image_list, as: :file %>
             <%= f.submit class:"btn btn-primary" %>
           <% end %>
       </div>
